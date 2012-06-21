@@ -74,6 +74,6 @@ hold off
  
  figure(4)
  clf(4)
- plot(xcorr(y1,y2))
+ plot(t, y1(delay_eva+1:end) - y2(1:end-delay_eva))
         
         
