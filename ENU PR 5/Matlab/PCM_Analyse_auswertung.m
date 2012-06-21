@@ -1,10 +1,11 @@
-% PCM_Analyse.m
+% PCM_Analyse_auswertung.m
 clear all;
 %close all;
-load('pcm_data_test.mat')
+load('../Messwerte/dreieckflanken.mat')
 % A... Spannungssignal
 % B... Bitwörter+Rahmensynchronisationssignal
 
+B = -B
 
 %Filter Kanal B
 B_filt=PerfectTP(B,1/Tinterval,200e3);
@@ -152,11 +153,6 @@ end
 figure(1)
 clf(1)
 stem(VoltVal,DecVal)
-axis([-2.5 2.5 0 270])
 xlabel('Spannung [V]')
 ylabel('Abtaststufe')
-
-
-figure(1);
-print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
 
