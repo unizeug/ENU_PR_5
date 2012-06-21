@@ -19,7 +19,7 @@ Aneu=a*Ameanfrei;
 
 figure(1);
 length(B);
-tend=Tstart+Length*Tinterval;
+tend=Length*Tinterval;
 t=linspace(Tstart,tend,Length);
 
 
