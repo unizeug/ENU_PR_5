@@ -14,66 +14,89 @@ MaxDeko=max(Ameanfrei);
 %minimale zeitliche Verschiebung finden
 %und Signale entsprechend zuschneiden
 
-a=MaxSende/MaxDeko;
-Aneu=a*Ameanfrei;
+booost=MaxSende/MaxDeko;
+Aneu=booost*Ameanfrei;
+
+
+tend=Length*Tinterval;
+t=linspace(0,tend,Length);
+
 
 figure(1);
-length(B);
-tend=Length*Tinterval;
-t=linspace(Tstart,tend,Length);
+clf(1);
 
-
-plot(t,Bmeanfrei,'r');
 hold on
-plot(t,Aneu);
+    plot(t,Bmeanfrei,'r');
+    plot(t,Aneu);
 hold off
 
-%xcor
+
+
+% kreuzkorrelation um das Delay zu bestimmen
+
+[c,lag]=xcorr(Aneu,Bmeanfrei);
+[mx,max_ind]=max(abs(c));
+delay=lag(max_ind)
+
+
+t = t(1:end-delay);
+A = Aneu(delay+1:end);
+B = Bmeanfrei(1:end-delay);
+
+
+ 
+figure(2)
+clf(2)
+
+hold on
+    plot(t,A)
+    plot(t,B,'r')
+hold off
+ 
+ 
+ 
+figure(3);
+clf(3);
+
+plot(t, A - B)
+
+
+
+
+
+
 
 %Quantisierungsfehler bestimmen
-Quant=B-Aneu;
-%Plot Quantisierungsfehler-Histogramm
-figure(2);
-hist(Quant);
+QuantErr=A - B;
+
+figure(4);
+clf(4);
+hist(QuantErr);
+
+
 %Plot Quantisierungsfehler-LDS
 
 
 
 
 
-t1=0:0.2:15; 
-y1=Aneu;%sin(t1); 
-y2=Bmeanfrei;%cos(t1); 
+%% noch nicht fertig
+
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/Signal_Re.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
 
 
-[xr,lag]=xcorr(y1,y2);
-[mx,mind]=max(abs(xr));
-delay_eva=lag(mind)
 
 
 
-[c,lags] = xcorr(y1,y2); 
-index_center=(length(c)+1)./2; 
-[c,index_max]=max(c); 
-delay=index_max-index_center
-        
 
- 
- 
-figure(3)
-clf(3)
-hold on
 
-t = t(1:end-delay_eva);
-plot(t,y1(delay_eva+1:end))
-plot(t,y2(1:end-delay_eva),'r')
 
-hold off
- 
- 
- 
- figure(4)
- clf(4)
- plot(t, y1(delay_eva+1:end) - y2(1:end-delay_eva))
-        
-        
+
+
