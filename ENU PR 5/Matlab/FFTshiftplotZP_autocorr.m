@@ -1,4 +1,4 @@
-function FFTshiftplotZP_autocorr(y, T_ges, f_T, A,farbe, fignum)
+function FFTshiftplotZP_autocorr(y, T_ges, f_T, A,farbe, fignum, xmin, xmax)
 
 % y         - Zeitvektor
 % T_ges     - Dauer des Signals
@@ -46,7 +46,7 @@ ylabel('u [V^2]');
 %Darstellung des Amplitudenspektrums
 subplot(2,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
-AXIS([0 450 0 (max(y_DFT_abs*1.2)*10)/10]);
+AXIS([xmin xmax 0 (max(y_DFT_abs*1.2)*10)/10]);
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');
