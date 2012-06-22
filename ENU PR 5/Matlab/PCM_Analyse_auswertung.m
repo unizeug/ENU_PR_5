@@ -5,7 +5,7 @@ load('../Messwerte/dreieckflanken.mat')
 % A... Spannungssignal
 % B... Bitwörter+Rahmensynchronisationssignal
 
-B = -B
+B = -B;
 
 %Filter Kanal B
 B_filt=PerfectTP(B,1/Tinterval,200e3);
@@ -98,7 +98,7 @@ for i=1:AnzahlBitWorte
     
     % k zum hochzählen der der Bits vom MSB zum LSB
     for k=1:8
-    
+        
         % wie viele Abtastwerte weisen wir diesem Bit zu
         AbtProBit = round(TastWerte/j);
         
