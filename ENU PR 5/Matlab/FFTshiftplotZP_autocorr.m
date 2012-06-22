@@ -41,7 +41,7 @@ plot(t,y,farbe);
 %AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2]);
 AXIS([0 0.05 min(y)*1.21 max(y)*1.2]);
 title('Autokorrelation');
-xlabel('t [s]');
+xlabel('\tau [s]');
 ylabel('u [V^2]');
 %Darstellung des Amplitudenspektrums
 subplot(2,1,2);
