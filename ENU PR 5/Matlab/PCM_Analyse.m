@@ -1,7 +1,7 @@
 % PCM_Analyse.m
 clear all;
 %close all;
-load('pcm_data_test.mat')
+load('../Messwerte/pcm_data_test.mat')
 % A... Spannungssignal
 % B... Bitwörter+Rahmensynchronisationssignal
 
@@ -157,6 +157,9 @@ xlabel('Spannung [V]')
 ylabel('Abtaststufe')
 
 
-figure(1);
-print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+
+
+
 

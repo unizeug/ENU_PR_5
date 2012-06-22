@@ -1,12 +1,12 @@
 clear all; %close all;
-load ../Messwerte/100kHz_sin.mat
+load ../Messwerte/8kHz_dreieck.mat
 %Mittelwertbefreiung
 
 
 meanB=mean(B);
 meanA=mean(A);
 
-Bmeanfrei=B-meanB;
+Bmeanfrei=-B-meanB;
 Ameanfrei=A-meanA;
 
 MaxSende=max(Bmeanfrei);
@@ -83,22 +83,22 @@ T_ges=Tinterval*Length;
 
 figure(5);
 clf(5);
-FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 450);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2000);
 
 
 
 % PDFs erstellen
 
 % figure(1);
-% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Signal_Rekonstuiert.pdf
+% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert.pdf
 % figure(2);
-% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Signal_Rekonstuiert_delayed.pdf
+% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert_delayed.pdf
 % figure(3);
-% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quantisierungsfehler.pdf
+% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quantisierungsfehler.pdf
 % figure(4);
-% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
+% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quant_Hist.pdf
 % figure(5);
-% print -painters -dpdf -r600 ../Bilder/100kHz_sin_LSD.pdf
+% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_LSD.pdf
 
 
 

@@ -1,1 +1,2 @@
-*.pdf binary merge=keepTheir
+*.pdf binary
+*.pdf merge=keepTheir

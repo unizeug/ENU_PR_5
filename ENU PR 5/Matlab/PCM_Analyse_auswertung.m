@@ -156,3 +156,10 @@ stem(VoltVal,DecVal)
 xlabel('Spannung [V]')
 ylabel('Abtaststufe')
 
+
+
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/PCM_Test_auswertung.pdf
+
+
+
