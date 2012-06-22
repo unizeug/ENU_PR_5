@@ -76,26 +76,26 @@ hist(QuantErr);
 
 %Plot Quantisierungsfehler-LDS
 
-
 f_T=100000; % oder =8000
 T_ges=Tinterval*Length;
 [c,lag]=xcorr(QuantErr,QuantErr);
-%q=fft(QuantErr);
+
 figure(5);
 clf(5);
-FFTshiftplotZP2(c, T_ges, f_T, 4, 'r', 5);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5);
 
 %% noch nicht fertig
 
 % figure(1);
-% print -painters -dpdf -r600 ../Bilder/Signal_Re.pdf
+% print -painters -dpdf -r600 ../Bilder/Signal_Rekonstuiert.pdf
 % figure(2);
-% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% print -painters -dpdf -r600 ../Bilder/Signal_Rekonstuiert_delayed.pdf
 % figure(3);
-% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% print -painters -dpdf -r600 ../Bilder/Quantisierungsfehler.pdf
 % figure(4);
-% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
-
+% print -painters -dpdf -r600 ../Bilder/Quant_Hist.pdf
+figure(5);
+print -painters -dpdf -r600 ../Bilder/LSD.pdf
 
 
 

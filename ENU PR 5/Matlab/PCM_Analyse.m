@@ -1,7 +1,7 @@
 % PCM_Analyse.m
 clear all;
 %close all;
-load('pcm_data_test.mat')
+load('../Messwerte/pcm_data_test.mat')
 % A... Spannungssignal
 % B... Bitwörter+Rahmensynchronisationssignal
 
