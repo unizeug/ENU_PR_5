@@ -155,7 +155,8 @@
                 
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/8kHz_dreieck_Quantisierungsfehler}
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm,
+                        clip]{Bilder/100kHz_dreieck_Quantisierungsfehler}
                        \caption{Quantisierungsfehler 8 kHz Dreieck}
 		              \label{fig:QuantErr 8 kHz Dreieck}
                     \end{figure}
@@ -166,13 +167,63 @@
             
             \vspace{2em}
 	   	
+	   	Mit dem Matlabbefehl hist wird der Quantisierungsfehler als Häufigkeitsverteilung geplottet. Die Ergebnisse sind in
+	   	Abbildung \ref{fig:100kHz_drei_Hist} und \ref{fig:100kHz_sin_Hist} zu sehen.
 	   	
+	   		\begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_dreieck_Quant_Hist}
+                          \caption{100 kHz Dreieck Quantisierungsfehler Histplot}
+		                  \label{fig:100kHz_drei_Hist}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_Quant_Hist}
+                       \caption{100 kHz Sinus Quantisierungsfehler Histplot}
+		              \label{fig:100kHz_sin_Hist}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+        \end{center}
+            
+        \vspace{2em}
 	   	
 	   	
 	   	Für das Leistungsdichtespektrum wird die Autokorrelation des Quantisierungsfehlers mit dem Befehl xcorr aus matlab
-	   	gebildet und das Ergebnis dann Fouriertransformiert (Abb.).
+	   	gebildet und das Ergebnis dann Fouriertransformiert (Abb. \ref{fig:100kHz_drei_LDS} und
+	   	\ref{fig:100kHz_sin_LDS}).
 	   	
-	   	
+	   	\begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_dreieck_LSD}
+                          \caption{100 kHz Dreieck Quantisierungsfehler LDS}
+		                  \label{fig:100kHz_drei_LDS}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_LSD}
+                       \caption{100 kHz Sinus Quantisierungsfehler LDS}
+		              \label{fig:100kHz_sin_LDS}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+        \end{center}
+            
+        \vspace{2em}
     	
     	\end{quote}
     
