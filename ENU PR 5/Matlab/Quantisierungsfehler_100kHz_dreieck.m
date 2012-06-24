@@ -89,16 +89,16 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 750);
 
 % PDFs erstellen
 
-% figure(1);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert.pdf
-% figure(2);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert_delayed.pdf
-% figure(3);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quantisierungsfehler.pdf
-% figure(4);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quant_Hist.pdf
-% figure(5);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_LSD.pdf
+figure(1);
+print -painters -dpdf -r600 ../Bilder/100kHz_dreieck_Signal_Rekonstuiert.pdf
+figure(2);
+print -painters -dpdf -r600 ../Bilder/100kHz_dreieck_Signal_Rekonstuiert_delayed.pdf
+figure(3);
+print -painters -dpdf -r600 ../Bilder/100kHz_dreieck_Quantisierungsfehler.pdf
+figure(4);
+print -painters -dpdf -r600 ../Bilder/100kHz_dreieck_Quant_Hist.pdf
+figure(5);
+print -painters -dpdf -r600 ../Bilder/100kHz_dreieck_LSD.pdf
 
 
 
