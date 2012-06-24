@@ -30,14 +30,15 @@ hold on
     plot(t,Aneu);
 hold off
 xlim([0 0.05])
-
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
 
 
 % kreuzkorrelation um das Delay zu bestimmen
 
 [c,lag]=xcorr(Aneu,Bmeanfrei);
 [mx,max_ind]=max(abs(c));
-delay=lag(max_ind)
+delay=lag(max_ind);
 
 
 t = t(1:end-delay);
@@ -53,14 +54,16 @@ hold on
     plot(t,A)
     plot(t,B,'r')
 hold off
- 
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
  
  
 figure(3);
 clf(3);
 
 plot(t, A - B)
-
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
 
 
 

@@ -30,12 +30,14 @@ hold on
     plot(t,Aneu);
 hold off
 xlim([0 0.05])
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
 
 % kreuzkorrelation um das Delay zu bestimmen
 
 [c,lag]=xcorr(Aneu,Bmeanfrei);
 [mx,max_ind]=max(abs(c));
-delay=lag(max_ind)
+delay=lag(max_ind);
 
 
 t = t(1:end-delay);
@@ -51,14 +53,16 @@ hold on
     plot(t,B,'r')
     plot(t,A)
 hold off
- 
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
  
  
 figure(3);
 clf(3);
 
 plot(t, A - B)
-
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
 
 
 
@@ -68,7 +72,8 @@ QuantErr=A - B;
 figure(4);
 clf(4);
 hist(QuantErr);
-
+xlabel('Häufigkeit');
+ylabel('Spannung [V]');
 
 %Plot Quantisierungsfehler-LDS
 
@@ -78,7 +83,7 @@ T_ges=Tinterval*Length;
 
 figure(5);
 clf(5);
-FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 10000);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2500);
 
 
 

@@ -30,14 +30,15 @@ hold on
     plot(t,Aneu);
 hold off
 xlim([0 0.05])
-
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
 
 
 % kreuzkorrelation um das Delay zu bestimmen
 
 [c,lag]=xcorr(Aneu,Bmeanfrei);
 [mx,max_ind]=max(abs(c));
-delay=lag(max_ind)
+delay=lag(max_ind);
 
 
 t = t(1:end-delay);
@@ -53,14 +54,16 @@ hold on
     plot(t,A)
     plot(t,B,'r')
 hold off
- 
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
  
  
 figure(3);
 clf(3);
 
 plot(t, A - B)
-
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
 
 
 
@@ -83,22 +86,21 @@ T_ges=Tinterval*Length;
 
 figure(5);
 clf(5);
-FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2000);
-
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2500);
 
 
 % PDFs erstellen
 
-% figure(1);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert.pdf
-% figure(2);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert_delayed.pdf
-% figure(3);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quantisierungsfehler.pdf
-% figure(4);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quant_Hist.pdf
-% figure(5);
-% print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_LSD.pdf
+figure(1);
+print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert.pdf
+figure(2);
+print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Signal_Rekonstuiert_delayed.pdf
+figure(3);
+print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quantisierungsfehler.pdf
+figure(4);
+print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_Quant_Hist.pdf
+figure(5);
+print -painters -dpdf -r600 ../Bilder/8kHz_dreieck_LSD.pdf
 
 
 
