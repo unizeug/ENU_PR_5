@@ -78,7 +78,7 @@ T_ges=Tinterval*Length;
 
 figure(5);
 clf(5);
-FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2500);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 10000);
 
 
 
