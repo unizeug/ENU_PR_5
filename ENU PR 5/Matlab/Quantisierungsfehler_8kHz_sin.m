@@ -1,4 +1,5 @@
 clear all; %close all;
+% feature('DefaultCharacterSet','UTF-8');
 load ../Messwerte/8kHz_sin.mat
 %Mittelwertbefreiung
 
@@ -77,13 +78,13 @@ ylabel('Spannung [V]');
 
 %Plot Quantisierungsfehler-LDS
 
-f_T=100000; % oder =8000
+f_T=8000;
 T_ges=Tinterval*Length;
 [c,lag]=xcorr(QuantErr,QuantErr);
 
 figure(5);
 clf(5);
-FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2500);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 200);
 
 
 
@@ -96,7 +97,7 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 2500);
 % figure(3);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quantisierungsfehler.pdf
 % figure(4);
-% print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quant_Hist.pdf
+% print -zbuffer -dpdf -r600 ../Bilder/8kHz_sin_Quant_Hist.pdf
 % figure(5);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_LSD.pdf
 

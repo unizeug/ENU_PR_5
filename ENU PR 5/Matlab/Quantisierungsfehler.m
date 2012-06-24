@@ -1,4 +1,5 @@
 clear all; %close all;
+% feature('DefaultCharacterSet','UTF-8');
 load ../Messwerte/100kHz_sin.mat
 %Mittelwertbefreiung
 
@@ -32,7 +33,7 @@ hold off
 xlim([0 0.05])
 xlabel('Zeit [s]');
 ylabel('Spannung [V]');
-
+legend('Originalsignal','Empfangssignal')
 
 % kreuzkorrelation um das Delay zu bestimmen
 
@@ -56,8 +57,9 @@ hold on
 hold off
 xlabel('Zeit [s]');
 ylabel('Spannung [V]');
- 
- 
+legend('Originalsignal','Empfangssignal')
+
+
 figure(3);
 clf(3);
 
@@ -77,6 +79,14 @@ figure(4);
 clf(4);
 hist(QuantErr);
 
+ylabel('Spannung [V]');
+xlabel('Häufigkeit'); 
+
+
+%xlabel('H\"aufigkeit','Interpreter','LaTex')
+%ylabel('Spannung [V]','Interpreter','none')
+% xlabel('r\"aumen', 'interpreter', 'latex')
+
 
 %Plot Quantisierungsfehler-LDS
 
@@ -86,7 +96,7 @@ T_ges=Tinterval*Length;
 
 figure(5);
 clf(5);
-FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 450);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 750);
 
 
 
@@ -99,7 +109,7 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 450);
 % figure(3);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quantisierungsfehler.pdf
 % figure(4);
-% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
+% print -zbuffer -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
 % figure(5);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_LSD.pdf
 
