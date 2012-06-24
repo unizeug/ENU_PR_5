@@ -102,91 +102,116 @@
     	Dämpfung und einen Delay erfährt, wird das dekodierte Signal mit Hilfe von Matlab verstärkt und mit der Kreuzkorrelation 
     	um die erfahrene Verzögerung verschoben. Das Ergebnis ist in Abb.
     	\ref{fig:100kHz_sin_rek_angepasst} zu sehen. \\
-    	
-    	\begin{center}
+        
+        \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_Signal_Rekonstuiert}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_sin_Signal_Rekonstuiert}
                           \caption{100 kHz Sinus noch verschoben}
-		                  \label{fig:100kHz_sin_rek}
+                          \label{fig:100kHz_sin_rek}
                     \end{figure}
                 \end{minipage}
                 
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_Signal_Rekonstuiert_delayed}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_sin_Signal_Rekonstuiert_delayed}
                        \caption{100 kHz Sinus angepasst}
-		              \label{fig:100kHz_sin_rek_angepasst}
+                      \label{fig:100kHz_sin_rek_angepasst}
                     \end{figure}
                 \end{minipage}
             
             \end{tabular}
         \end{center}
-            
-        \vspace{2em}
-    	
-%     	 \begin{figure}[H]
-%             \centering
-%             \hspace{-3em}
-%             \includegraphics[scale=0.8, trim = 2cm 7cm 1cm 8cm, clip]{Bilder/100kHz_sin_Signal_Rekonstuiert_delayed}
-%             \caption{100 kHz Sinus }
-%             \label{fig:100kHz_sin_rek_angepasst}
-%         \end{figure}
-     	
-    	
-    	
-	   	Anschließend können Sendesignal und dekodiertes Signal voneinander subrahiert werden und man erhält den
-	   	Quantisierungsfehler.\\
-	   	
-	   	\begin{center}
+        
+        
+        
+        
+        \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_Quantisierungsfehler}
-                          \caption{Quantisierungsfehler 100 kHz Sinus}
-		                  \label{fig:QuantErr 100 kHz Sinus}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/8kHz_sin_Signal_Rekonstuiert}
+                          \caption{8 kHz Sinus noch verschoben}
+                          \label{fig:8kHz_sin_rek}
                     \end{figure}
                 \end{minipage}
                 
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm,
-                        clip]{Bilder/100kHz_dreieck_Quantisierungsfehler}
-                       \caption{Quantisierungsfehler 8 kHz Dreieck}
-		              \label{fig:QuantErr 8 kHz Dreieck}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/8kHz_sin_Signal_Rekonstuiert_delayed}
+                       \caption{8 kHz Sinus angepasst}
+                      \label{fig:8kHz_sin_rek_angepasst}
                     \end{figure}
                 \end{minipage}
             
             \end{tabular}
-            \end{center}
-            
-            \vspace{2em}
-	   	
-	   	Mit dem Matlabbefehl hist wird der Quantisierungsfehler als Häufigkeitsverteilung geplottet. Die Ergebnisse sind in
-	   	Abbildung \ref{fig:100kHz_drei_Hist} und \ref{fig:100kHz_sin_Hist} zu sehen.
-	   	
-	   		\begin{center}
+        \end{center}
+        
+        \vspace{2em}
+        
+        
+        
+        Anschließend können Sendesignal und dekodiertes Signal voneinander subrahiert werden und man erhält den
+        Quantisierungsfehler.\\
+        
+        \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_dreieck_Quant_Hist}
-                          \caption{100 kHz Dreieck Quantisierungsfehler Histplot}
-		                  \label{fig:100kHz_drei_Hist}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_sin_Quantisierungsfehler}
+                          \caption{Quantisierungsfehler 100 kHz Sinus}
+                          \label{fig:QuantErr 100 kHz Sinus}
                     \end{figure}
                 \end{minipage}
                 
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_Quant_Hist}
-                       \caption{100 kHz Sinus Quantisierungsfehler Histplot}
-		              \label{fig:100kHz_sin_Hist}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_dreieck_Quantisierungsfehler}
+                        \caption{Quantisierungsfehler 8 kHz Dreieck}
+                        \label{fig:QuantErr 8 kHz Dreieck}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+        \end{center}
+        
+        \vspace{2em}
+        
+        Mit dem Matlabbefehl hist wird der Quantisierungsfehler als Häufigkeitsverteilung geplottet. Die Ergebnisse sind in
+        Abbildung \ref{fig:100kHz_drei_Hist} und \ref{fig:100kHz_sin_Hist} zu sehen.
+        
+        \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-4cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_dreieck_Quant_Hist}
+                        \caption{100 kHz Dreieck Quantisierungsfehler Histplot}
+                        \label{fig:100kHz_drei_Hist}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_sin_Quant_Hist}
+                        \caption{100 kHz Sinus Quantisierungsfehler Histplot}
+                        \label{fig:100kHz_sin_Hist}
                     \end{figure}
                 \end{minipage}
             
@@ -203,20 +228,22 @@
 	   	\begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_dreieck_LSD}
-                          \caption{100 kHz Dreieck Quantisierungsfehler LDS}
-		                  \label{fig:100kHz_drei_LDS}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_dreieck_LSD}
+                        \caption{100 kHz Dreieck Quantisierungsfehler LDS}
+                        \label{fig:100kHz_drei_LDS}
                     \end{figure}
                 \end{minipage}
                 
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/100kHz_sin_LSD}
-                       \caption{100 kHz Sinus Quantisierungsfehler LDS}
-		              \label{fig:100kHz_sin_LDS}
+                        \includegraphics[scale=0.5, trim = 16mm 70mm 16mm 85mm, clip]
+                                        {Bilder/100kHz_sin_LSD}
+                        \caption{100 kHz Sinus Quantisierungsfehler LDS}
+                        \label{fig:100kHz_sin_LDS}
                     \end{figure}
                 \end{minipage}
             
