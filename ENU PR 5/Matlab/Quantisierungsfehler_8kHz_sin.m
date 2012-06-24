@@ -62,9 +62,6 @@ plot(t, A - B)
 
 
 
-
-
-
 %Quantisierungsfehler bestimmen
 QuantErr=A - B;
 
