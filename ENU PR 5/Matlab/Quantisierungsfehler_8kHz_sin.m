@@ -73,8 +73,8 @@ QuantErr=A - B;
 figure(4);
 clf(4);
 hist(QuantErr);
-xlabel('Häufigkeit');
-ylabel('Spannung [V]');
+ylabel('Häufigkeit');
+xlabel('Spannung [V]');
 
 %Plot Quantisierungsfehler-LDS
 
@@ -97,7 +97,7 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 200);
 % figure(3);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quantisierungsfehler.pdf
 % figure(4);
-% print -zbuffer -dpdf -r600 ../Bilder/8kHz_sin_Quant_Hist.pdf
+% print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quant_Hist.pdf
 % figure(5);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_LSD.pdf
 
