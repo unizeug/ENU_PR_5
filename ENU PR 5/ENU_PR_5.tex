@@ -278,6 +278,14 @@
          
         \vspace{2em}
         
+        Die Definition des Leistungsdichtspektrums ist in Formel \ref{eq:LDS} beschrieben:
+        
+        \begin{equation}
+          S_{uu}(\omega):=\mathcal{F} \{r_{uu}\}(\tau)=\int\limits_{-\infty}^{\infty} r_{uu}(t)e^{-j \omega t} \ dt
+          \label{eq:LDS}
+        \end{equation}
+        
+        
         Für das Leistungsdichtespektrum wird die Autokorrelation des Quantisierungsfehlers mit dem Befehl xcorr aus
         Matlab gebildet und das Ergebnis dann fouriertransformiert (Abb. \ref{fig:100kHz_drei_LDS} und
         \ref{fig:100kHz_sin_LDS}).
