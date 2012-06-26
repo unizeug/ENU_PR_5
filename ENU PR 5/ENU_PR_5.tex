@@ -8,7 +8,7 @@
 
 
 \newcommand{\pdftitle}{Nachrichtenuebertragung\ Praktikum\ 05}
-\newcommand{\prototitle}{Praktikum 05 \\ Pulsamplitudenmodulation und nichtideale Abtastung}
+\newcommand{\prototitle}{Praktikum 05 \\ Pulsecodemodulation und Quantisierung}
 
 \input{../../packages/tu_header_9}
 
@@ -32,6 +32,15 @@
         \caption{Testkennlinie des PCM-Analyse Scriptes}
         \label{fig:PCM_Test}
     \end{figure}
+    
+    \vspace{2em}
+    
+    In Abbildung \ref{fig:PCM_Test} ist die PCM-Encoder-Kennlinie einer Messreihe zu sehen, die mit einem nicht
+    linearen Quantisierer quantisiert wurde. Dabei werden die Werte um 0 herum wesentlich genauer und die
+    Werte im größeren Spannungsbreich seltener abgetastet. Dies kann von Vorteil sein, wenn die Werte um 0 häufiger
+    auftreten und somit für die Messung interessanter sind.\\
+    
+    
     
     
     \TODO{Blockschaltbild? erklärung?}
@@ -69,7 +78,7 @@
         
         Um den Quantisierungsfehler bestimmen zu können, werden das Eingangssignal und das dekodierte Signal benötigt. Zur
         Dekodierung wird das PCM Decoder-Modul genutzt. Die Eingänge FS, PCM DATA un CLK werden mit ihren jeweiligen
-        Gegenstücken des PCM Encoder-Moduls verbunden. Anschließend kann das Signal am OUTPUT 1 zusammen mit dem
+        Gegenstücken des PCM Encoder-Moduls verbunden. Anschließend wird das Signal am OUTPUT 1 zusammen mit dem
         Eingangsignal dem Picoscope zugeführt.\\
         
         
@@ -86,14 +95,21 @@
 \section{Auswertung \& Theorie}
 \begin{quote}
     
-    \TODO{Thommy: Stimmt es, dass bei 8kHz in der Matlabdatei $f_T=8000;$ stehen muss? (so sind die Plots jetzt
-    gemacht)}
-    
-    
     \subsection{Encoderkennlinie}
+    
     \begin{quote}
-        dsf
         
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.7, trim = 2cm 7cm 1cm 8cm, clip]{Bilder/PCM_Test_auswertung}
+        \caption{PCM-Encoderkennlinie der steigenden Dreiecksflanke}
+        \label{fig:PCM_Test_dreieck}
+    \end{figure}
+    
+    In Abbildung \ref{fig:PCM_Test_dreieck} erkennt man im Gegensatz zu der Abbildung \ref{fig:PCM_Test} in der
+    Vorbereitungsaufgabe eine lineare Encoder-Kennlinie. Die im Labor mit dem PCM-Modul aufgenommenen Messwerte wurden
+    also mit einem linearen Quantisierer aufgenommen.
+    
     \end{quote}
     
     
@@ -103,8 +119,7 @@
         Das Signal besitzt in dieser Form noch einen Mittelwert (Offset), welcher mit der Funktion mean in Matlab ermittelt
         werden kann und vom Signal abgezogen wird. Da weiterhin das Signal durch den Kodier- und Dekodiervorgang eine
         Dämpfung und einen Delay erfährt, wird das dekodierte Signal mit Hilfe von Matlab verstärkt und mit der Kreuzkorrelation
-        um die erfahrene Verzögerung verschoben. Das Ergebnis ist in Abb.
-        \ref{fig:100kHz_sin_rek_angepasst} zu sehen. \\
+        um die erfahrene Verzögerung verschoben. Das Ergebnis ist in Abb. \ref{fig:100kHz_sin_rek_angepasst} zu sehen. \\
         
         \begin{center}
             \begin{tabular}{ll}
@@ -136,7 +151,9 @@
         
         
         Anschließend können Sendesignal und dekodiertes Signal voneinander subrahiert werden und man erhält den
-        Quantisierungsfehler.\\
+        Quantisierungsfehler. Die Quantisierungsfehler sind in den Abbildungen \ref{fig:QuantErr 100 kHz
+        Sinus},\ref{fig:QuantErr 100 kHz Dreieck}, \ref{fig:QuantErr 8 kHz Sinus} und \ref{fig:QuantErr 8 kHz
+        Dreieck} zu sehen.\\
         
         \begin{center}
             \begin{tabular}{ll}
@@ -190,6 +207,11 @@
             \end{tabular}
         \end{center}
         \vspace{2em}
+        
+        Es ist gut zu erkennen, dass wie zu erwarten für die Abtastung mit 8 kHz ein von der Amplitude her wesentlich
+        größerer Fehler auftritt als bei 100 kHz.
+         
+        \vspace{2em} 
          
         Mit dem Matlabbefehl hist wird der Quantisierungsfehler als Häufigkeitsverteilung geplottet. Die Ergebnisse sind in
         Abbildung \ref{fig:100kHz_drei_Hist}, \ref{fig:100kHz_sin_Hist}, \ref{fig:8kHz_drei_Hist} und
@@ -249,9 +271,15 @@
         
         \vspace{2em}
         
+        Der Quantisierungsfehler, bzw. das Quantisierungsrauschen ist wie erwartet gaußverteilt.
+        In den Histplots ist auch zu erkennen, dass bei der Abtastung mit 100 kHz die Amplituden des
+        Quantisierungsfehlers geringer ist als bei der mit 8 kHz. Des weiteren treten die kleinen Fehler um die 0
+        wesentlich häufiger auf und es ergibt sich eine schmalere Gaußverteilung.
+         
+        \vspace{2em}
         
-        Für das Leistungsdichtespektrum wird die Autokorrelation des Quantisierungsfehlers mit dem Befehl xcorr aus matlab
-        gebildet und das Ergebnis dann Fouriertransformiert (Abb. \ref{fig:100kHz_drei_LDS} und
+        Für das Leistungsdichtespektrum wird die Autokorrelation des Quantisierungsfehlers mit dem Befehl xcorr aus
+        Matlab gebildet und das Ergebnis dann fouriertransformiert (Abb. \ref{fig:100kHz_drei_LDS} und
         \ref{fig:100kHz_sin_LDS}).
         
         \begin{center}
@@ -306,6 +334,9 @@
             \end{tabular}
         \end{center}
         \vspace{2em}
+        
+        An den Spektren kann man erkennen, dass sich die Amplituden für die Abtastung mit 8 kHz deutlich höher sind, da
+        der Quantisierungsfehler für eine kleinere Abtastfrequenz größer ist.
         
     \end{quote}
     
