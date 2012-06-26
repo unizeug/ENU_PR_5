@@ -80,7 +80,7 @@ clf(4);
 hist(QuantErr);
 
 xlabel('Spannung [V]');
-ylabel('Häufigkeit'); 
+ylabel('HÃ¤ufigkeit'); 
 
 
 %xlabel('H\"aufigkeit','Interpreter','LaTex')

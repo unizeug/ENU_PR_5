@@ -77,8 +77,8 @@ QuantErr=A - B;
 figure(4);
 clf(4);
 hist(QuantErr);
-ylabel('Häufigkeit');
-xlabel('Spannung [V]');
+xlabel('HÃ¤ufigkeit');
+ylabel('Spannung [V]');
 
 %Plot Quantisierungsfehler-LDS
 
