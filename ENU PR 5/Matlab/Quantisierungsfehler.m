@@ -79,8 +79,8 @@ figure(4);
 clf(4);
 hist(QuantErr);
 
-ylabel('Spannung [V]');
-xlabel('Häufigkeit'); 
+xlabel('Spannung [V]');
+ylabel('Häufigkeit'); 
 
 
 %xlabel('H\"aufigkeit','Interpreter','LaTex')
@@ -108,8 +108,8 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 750);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_Signal_Rekonstuiert_delayed.pdf
 % figure(3);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quantisierungsfehler.pdf
-% figure(4);
-% print -zbuffer -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
+figure(4);
+print -painters -djpeg -r600 ../Bilder/100kHz_sin_Quant_Hist.jpg
 % figure(5);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_LSD.pdf
 
