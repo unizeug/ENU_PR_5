@@ -4,4 +4,7 @@
 *.log
 *.aux
 *.synctex.gz
+<<<<<<< HEAD
 *.fuse_hidden*
+=======
+>>>>>>> origin/Thommy
