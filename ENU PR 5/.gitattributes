@@ -1,2 +1,2 @@
-*.pdf binary
-*.pdf merge=keepTheir
+**/*.pdf binary
+*.tex diff=tex

@@ -52,8 +52,8 @@ figure(2)
 clf(2)
 
 hold on
-    plot(t,A)
     plot(t,B,'r')
+    plot(t,A)
 hold off
 xlabel('Zeit [s]');
 ylabel('Spannung [V]');
@@ -80,7 +80,7 @@ clf(4);
 hist(QuantErr);
 
 xlabel('Spannung [V]');
-ylabel('Häufigkeit'); 
+ylabel('Hï¿½ufigkeit'); 
 
 
 %xlabel('H\"aufigkeit','Interpreter','LaTex')
@@ -108,8 +108,8 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 750);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_Signal_Rekonstuiert_delayed.pdf
 % figure(3);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quantisierungsfehler.pdf
-figure(4);
-print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
 % figure(5);
 % print -painters -dpdf -r600 ../Bilder/100kHz_sin_LSD.pdf
 
