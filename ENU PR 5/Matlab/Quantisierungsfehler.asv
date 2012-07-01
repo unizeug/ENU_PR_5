@@ -1,5 +1,6 @@
 clear all; %close all;
-load ../Messwerte/100kHz_sin.mat
+% feature('DefaultCharacterSet','UTF-8');
+load ../Messwerte/sinus_clk8kHz.mat
 %Mittelwertbefreiung
 
 
@@ -29,14 +30,16 @@ hold on
     plot(t,Bmeanfrei,'r');
     plot(t,Aneu);
 hold off
-
-
+xlim([0 0.05])
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
+legend('Originalsignal','Empfangssignal')
 
 % kreuzkorrelation um das Delay zu bestimmen
 
 [c,lag]=xcorr(Aneu,Bmeanfrei);
 [mx,max_ind]=max(abs(c));
-delay=lag(max_ind)
+delay=lag(max_ind);
 
 
 t = t(1:end-delay);
@@ -52,13 +55,20 @@ hold on
     plot(t,A)
     plot(t,B,'r')
 hold off
- 
- 
- 
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
+legend('Originalsignal','Empfangssignal')
+
+
 figure(3);
 clf(3);
 
 plot(t, A - B)
+xlabel('Zeit [s]');
+ylabel('Spannung [V]');
+
+
+
 
 
 
@@ -69,29 +79,39 @@ figure(4);
 clf(4);
 hist(QuantErr);
 
+xlabel('Spannung [V]');
+ylabel('Häufigkeit'); 
+
+
+%xlabel('H\"aufigkeit','Interpreter','LaTex')
+%ylabel('Spannung [V]','Interpreter','none')
+% xlabel('r\"aumen', 'interpreter', 'latex')
+
 
 %Plot Quantisierungsfehler-LDS
 
-
-f_T=100000; % oder =8000
+f_T=8000; % oder =8000
 T_ges=Tinterval*Length;
 [c,lag]=xcorr(QuantErr,QuantErr);
-%q=fft(QuantErr);
+
 figure(5);
 clf(5);
-FFTshiftplotZP2(c, T_ges, f_T, 4, 'r', 5);
+FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0 , 750);
 
-%% noch nicht fertig
+
+
+% PDFs erstellen
 
 % figure(1);
-% print -painters -dpdf -r600 ../Bilder/Signal_Re.pdf
+% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Signal_Rekonstuiert.pdf
 % figure(2);
-% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Signal_Rekonstuiert_delayed.pdf
 % figure(3);
-% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
+% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quantisierungsfehler.pdf
 % figure(4);
-% print -painters -dpdf -r600 ../Bilder/PCM_Test.pdf
-
+% print -painters -dpdf -r600 ../Bilder/100kHz_sin_Quant_Hist.pdf
+% figure(5);
+% print -painters -dpdf -r600 ../Bilder/100kHz_sin_LSD.pdf
 
 
 

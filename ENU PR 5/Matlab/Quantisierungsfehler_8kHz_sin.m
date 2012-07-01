@@ -1,6 +1,6 @@
 clear all; %close all;
 % feature('DefaultCharacterSet','UTF-8');
-load ../Messwerte/8kHz_sin.mat
+load ../Messwerte/sinus_clk8kHz.mat
 %Mittelwertbefreiung
 
 
@@ -96,8 +96,8 @@ FFTshiftplotZP_autocorr(c, T_ges, f_T, 4, 'r', 5, 0, 200);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_Signal_Rekonstuiert_delayed.pdf
 % figure(3);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quantisierungsfehler.pdf
-figure(4);
-print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quant_Hist.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/8kHz_sin_Quant_Hist.pdf
 % figure(5);
 % print -painters -dpdf -r600 ../Bilder/8kHz_sin_LSD.pdf
 

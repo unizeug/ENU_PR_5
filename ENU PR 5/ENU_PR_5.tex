@@ -212,6 +212,43 @@
         größerer Fehler auftritt als bei 100 kHz.
          
         \vspace{2em} 
+        
+        \begin{center}
+        \begin{tabular}{ll}
+        
+        \hspace{-4cm}
+            \begin{minipage}{0.6\textwidth}
+                \begin{figure}[H]
+                    \includegraphics[scale=0.67, trim = 33mm 95mm 16mm 80mm, clip]{Bilder/Abtastpuls_minus_Kennlinie}
+                    \caption{Zeitsignal mit Abtastsignal vergrößert}
+                     \label{fig:ein_puls_mit_originalsignal}
+                \end{figure}
+            \end{minipage}
+           
+            \begin{minipage}{0.6\textwidth}
+                \begin{figure}[H]
+                    \includegraphics[scale=0.67, trim = 33mm 95mm 16mm 80mm, clip]{Bilder/Quant_steile_flanken}
+                    \caption{Quantisierungsfehler 8 kHz Sinus vergrößert}
+                    \label{fig:steile_flanke}
+                \end{figure}
+            \end{minipage} 
+        
+        \end{tabular}
+        \end{center}
+        
+        
+        \vspace{2em}
+        
+        In Abb. \ref{fig:ein_puls_mit_originalsignal} erkennt man eine S\&H-Stufe über dem Originalsignal. Der
+        Quantisierungsfehler, der sich aus der Abweichung dieser beiden Kennlinien ergibt, ist in Abb.
+        \ref{fig:steile_flanke} zu sehen. Der Sprung entsteht beim Erreichen der nächsten Stufe, da der
+        Quantisierungsfehler dann sprungartig sein Vorzeichen wechselt. Die Abb. \ref{fig:steile_flanke} ist also der
+        Quantisierungsfehler ab der Mitte der S\&H-Stufe in Abb. \ref{fig:ein_puls_mit_originalsignal} bis zur Mitte der
+        nächsten S\&H-Stufe.
+        
+        \vspace{2em}
+        
+        
          
         Mit dem Matlabbefehl hist wird der Quantisierungsfehler als Häufigkeitsverteilung geplottet. Die Ergebnisse sind in
         Abbildung \ref{fig:100kHz_drei_Hist}, \ref{fig:100kHz_sin_Hist}, \ref{fig:8kHz_drei_Hist} und

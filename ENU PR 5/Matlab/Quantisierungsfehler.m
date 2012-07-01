@@ -1,6 +1,6 @@
 clear all; %close all;
 % feature('DefaultCharacterSet','UTF-8');
-load ../Messwerte/8kHz_sin.mat
+load ../Messwerte/sinus_clk8kHz.mat
 %Mittelwertbefreiung
 
 
@@ -43,8 +43,8 @@ delay=lag(max_ind);
 
 
 t = t(1:end-delay);
-A = Aneu(delay+1:end);
-B = Bmeanfrei(1:end-delay);
+C = Aneu(delay+1:end);
+D = Bmeanfrei(1:end-delay);
 
 
  
@@ -52,8 +52,8 @@ figure(2)
 clf(2)
 
 hold on
-    plot(t,A)
-    plot(t,B,'r')
+    plot(t,C)
+    plot(t,D,'r')
 hold off
 xlabel('Zeit [s]');
 ylabel('Spannung [V]');
@@ -63,7 +63,7 @@ legend('Originalsignal','Empfangssignal')
 figure(3);
 clf(3);
 
-plot(t, A - B)
+plot(t, C - D)
 xlabel('Zeit [s]');
 ylabel('Spannung [V]');
 
@@ -73,7 +73,7 @@ ylabel('Spannung [V]');
 
 
 %Quantisierungsfehler bestimmen
-QuantErr=A - B;
+QuantErr=C - D;
 
 figure(4);
 clf(4);
@@ -90,7 +90,7 @@ ylabel('Häufigkeit');
 
 %Plot Quantisierungsfehler-LDS
 
-f_T=100000; % oder =8000
+f_T=8000; % oder =8000
 T_ges=Tinterval*Length;
 [c,lag]=xcorr(QuantErr,QuantErr);
 
